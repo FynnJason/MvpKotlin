@@ -63,7 +63,7 @@ class DemoActivity : BaseActivity<DemoContract.DemoView, DemoPresenter>(), DemoC
 
 
     override fun eventBus(code: Int, data: String) {
-
+        
     }
 
     override fun loginSuccess() {

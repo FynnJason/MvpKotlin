@@ -5,8 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import app.fynnjason.mvpkotlin.event.FJEvent
-import app.fynnjason.mvpkotlin.utils.LogUtils
+import app.fynnjason.mvpkotlin.event.EventMessage
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -58,7 +57,7 @@ abstract class BaseFragment<V, T : BasePresenter<V>> : Fragment() {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun FJEvent(event: FJEvent) {
-        eventBus(event.code, event.data)
+    fun eventMessage(eventMessage: EventMessage) {
+        eventBus(eventMessage.code, eventMessage.data)
     }
 }

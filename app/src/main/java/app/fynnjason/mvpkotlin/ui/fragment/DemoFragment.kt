@@ -23,7 +23,7 @@ class DemoFragment : BaseFragment<DemoFragmentContract.DemoView, DemoFragmentPre
     }
 
     override fun initListener() {
-        btn_add.setOnClickListener { mPresenter?.getNumber() }
+        btn_add.setOnClickListener { }
     }
 
     override fun initData() {

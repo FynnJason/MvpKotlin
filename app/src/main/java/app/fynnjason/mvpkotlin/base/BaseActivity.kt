@@ -5,7 +5,7 @@ import android.app.Activity
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import app.fynnjason.mvpkotlin.event.FJEvent
+import app.fynnjason.mvpkotlin.event.EventMessage
 import app.fynnjason.mvpkotlin.utils.LogUtils
 import com.gyf.immersionbar.ImmersionBar
 import org.greenrobot.eventbus.EventBus
@@ -49,8 +49,8 @@ abstract class BaseActivity<V, T : BasePresenter<V>> : AppCompatActivity() {
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun FJEvent(event: FJEvent) {
-        eventBus(event.code, event.data)
+    fun eventMessage(eventMessage: EventMessage) {
+        eventBus(eventMessage.code, eventMessage.data)
     }
 
     @SuppressLint("MissingSuperCall")
