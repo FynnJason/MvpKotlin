@@ -1,12 +1,15 @@
 package app.fynnjason.mvpkotlin.utils
 
-import com.blankj.utilcode.util.LogUtils
+import android.util.Log
+import app.fynnjason.mvpkotlin.BuildConfig
 
 
 class LogUtils {
     companion object {
         fun e(msg: String) {
-            LogUtils.e("MyLog：$msg")
+            if (BuildConfig.DEBUG) {
+                Log.e("MyLog", msg)
+            }
         }
     }
 }
